@@ -9,7 +9,6 @@ Nmap (Network Mapper) is a powerful open-source network scanning tool used to di
 - [Basic Usage](#basic-usage)
 - [Common Scan Types](#common-scan-types)
   - [Ping Scan](#ping-scan)
-  - [Port Scan](#port-scan)
   - [Service Version Detection](#service-version-detection)
   - [Operating System Detection](#operating-system-detection)
   - [Aggressive Scan](#aggressive-scan)
@@ -44,3 +43,28 @@ Performs a comprehensive scan, including OS detection, version detection, script
 Example: 
 
 nmap -A <target_ip>
+
+## Next section we're going to use these techniques for a TryHackMe room Alfred (https://tryhackme.com/r/room/alfred)
+
+Once in the room go ahead and start the machine and you should get an IP 
+![Download OpenVPN Config](https://i.imgur.com/oF6od1v.png)
+
+Also make sure you connect to OpenVPN to interact with the machine 
+
+## First question asking How many ports are open? (TCP only)
+![Download OpenVPN Config](https://i.imgur.com/T8ygBwh.png)
+
+The NMAP scan I'm going to use is 
+nmap -p- -T4 <target>
+Here's what each part of the command does:
+
+nmap: Calls the nmap tool.
+-p-: Scans all 65,535 TCP ports.
+-T4: Sets the timing template to 4, which makes the scan faster.
+Replace <target> with the IP address or hostname of the target you want to scan. For example:
+
+![Download OpenVPN Config](https://i.imgur.com/cegDLRw.png)
+
+As we can see there's 3 TCP Ports open so we can answer the question 
+![Download OpenVPN Config](https://i.imgur.com/bN9N5mw.png)
+
